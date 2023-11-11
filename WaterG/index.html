@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterG.com</title>
+    <link rel="icon" type="image/jpg" href="https://tse1.mm.bing.net/th?id=OIP.Z2u_1uhImxA6b6Otw0BFfwHaKp&pid=Api&P=0&h=180">
+    <style>
+        .body {margin:0}
+        .title-1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+        .ft1 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .txt1 {
+            font-size: 45px;
+            font-weight: 900;
+        }
+        .ca1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .box1 {
+            display: block;
+            background-color: #DADADA;
+            height: 80%;
+            width: 80%;
+            border-radius: 10px;
+            transition: 1s;
+        }
+        .txt2 {
+            font-size: 30px;
+            text-align: center;
+            font-weight: 900;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .inp1 {
+            margin-right: 5px;
+            width: 120px;
+            height: 60px;
+            border: 2px solid #BABABA;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 40px;
+            font-weight: 900;
+               }
+            .button1 {
+            height: 70px;
+            width:150px;
+            border: 2px solid #BABABA;
+            background-color: #C4C4C4;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+            transition: 0.5s;
+        }
+        .button1:hover {
+            background-color: #938E8E;
+            color: white;
+        }
+        .txt3 {
+            visibility: hidden;
+            text-align: center;
+            font-weight: 900;
+            font-size: 80%;
+            margin-left: 10px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+        <!----------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <!----------------->
+    <div class="title-1">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.Z2u_1uhImxA6b6Otw0BFfwHaKp&pid=Api&P=0&h=180" height="55" width="40">
+        <a class="ft1 txt1">WaterGoal</a>
+    </div><br><br><br>
+    <div class="ca1">
+        <div class="box1">
+           <p class="ft1 txt2">Enter amount of<br>water u drank<br>(in total) below:</p>
+           <div class="ca1"><input type="number" class="ft1 inp1" id="inp1" placeholder="ml"></div><br>
+           <div class="ca1"><button class=" ft1 button1" onclick="submit()">Submit</button></div><br>
+           <div class="ca1"><a class="ft1 txt3" id="txt3">null</a></div>
+        </div>
+    </div>
+<script>
+    var tp = "";
+    var el = 0;
+    var e = 0;
+    var d = 0;
+    var c = 0;
+    var b = 0;
+    var a = 0;
+     var le = 0;
+     var inp1 = 0;
+     var ta = 0;
+     var dt = 0;
+     var aet = 0;
+     var nt = 0;
+     const time = new Date();
+     var hr = time.getHours();
+     update();
+     function update() {
+        const ut = setTimeout(ru , 5000);
+     }
+     function ru() {
+        const time = new Date();
+        hr = time.getHours();
+        update();
+     }
+     function submit() {
+        tp = "";
+        el = 0;
+        e = 0;
+        d = 0;
+        c  = 0;
+        b = 0;
+        a = 0;
+        le = 0;
+        inp1 = 0;
+        ta = 0;  
+        dt = 0;
+        aet = 0;
+        nt = 0;
+        if(hr != 23 && hr != 12 && hr != 13 && hr != 14 && hr != 15 && hr != 16 && hr != 17 && hr != 18 && hr != 19 && hr != 20 && hr != 21 && hr !=22) {
+         dt = 1;
+         aet = 0;
+         nt = 0;
+         ta = 650;
+         tp = "morning"   
+        }
+        if(hr != 0 && hr != 1 && hr != 2 && hr != 3 && hr != 4 && hr != 5 && hr != 6 && hr != 7 && hr != 8 && hr != 9 && hr != 10 && hr !=11 && hr != 19 && hr != 20 && hr != 21 && hr != 22 && hr != 23) {
+         dt = 0;
+         aet = 1;
+         nt = 0;
+         ta = 473;
+         tp = "afternoon/evening" 
+        }
+        if(hr != 0 && hr != 1 && hr != 2 && hr != 3 && hr != 4 && hr != 5 && hr != 6 && hr != 7 && hr != 8 && hr != 9 && hr != 10 && hr !=11 && hr != 12 && hr != 13 && hr != 14 && hr != 15 && hr != 16 && hr != 17 && hr != 18 && hr != 23) {
+         dt = 0;
+         aet = 0;
+         nt = 1;
+         ta = 450;
+         tp = "night" 
+        }
+        inp1 = document.getElementById("inp1").value;        
+        if(inp1 < ta) {
+            le = 0;
+            c = (inp1 / ta) * 100;
+            d = ta - inp1;
+        }
+        else if(inp1 == ta) {
+            el = 1;
+        }
+        if(inp1 > ta) {
+            le = 1;
+            a = (inp1) - (ta);
+            b = (a / ta)* 100;
+        }
+        if(le == 0  && le == 0 && el == 0 ) {
+         if(le == 0 && el == 0 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank " + inp1 +"ml of water" + "<br>" +"in the " + tp +"(" + c +"% of goal)" +"<br>" + "⚽Your goal:" + "<br>" + ta + "ml of water" + "<br>" + "👉You need:" + "<br>" + d + "ml of water to complete✅" + "<br>" + "🚫Don't: Do not drink too much water!";
+         }
+        }
+        else if(le == 0 && el == 1 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank " + inp1 + "ml of water" + "<br>" + "Super🔥You have completed the goal in the " + tp + "(" + ta + "ml)" + "<br>" + "🚫Don't: Do not drink too much water!";
+        }
+        else if(le == 1 && el == 0 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank " + inp1 + "ml of water" + "<br>" + "Oh no😮!!You drank "+ a + "ml more water than goal" +"<br>"+"("+b+"% more of goal)"+"<br>" + "🚫Don't: Do not drink too much water!";
+        }
+     }
+</script>
+</body>
+</html>

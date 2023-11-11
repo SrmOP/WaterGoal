@@ -1,0 +1,21 @@
+Morning(12am-11am):650 (mL)
+Afternoon and evening(12pm-6pm) :473(ml)
+Night(7pm-11pm):450(ml)
+        if(le == 0  && le == 0 && el == 0 ) {
+         if(dt== 1 && le == 0 && el == 0 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank" + "<br>" + inp1 +"("+c+"%)ml of water in the morning" + "<br>" +"You needed " + d + " more water to complete " + "(" + (ta) + " total)";
+         }
+         if(aet== 1  && le == 0 && el == 0 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank" + "<br>" + inp1 +"("+c+"%)ml of water in the evening or afternoon" + "<br>" +"You needed " + d + " more water to complete " + "(" + (ta) + " total)";
+         }
+         if(nt== 1  && le == 0 && el == 0 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank" + "<br>" + inp1 +"("+c+"%)ml of water at night" + "<br>" +"You needed " + d + " more water to complete " + "(" + (ta) + " total)";
+         }
+        }
+        else if(le == 0 && el == 1 ) {
+            document.getElementById("txt3").style.visibility = "visible";
+            document.getElementById("txt3").innerHTML = "You drank " + inp1 + "ml of water" + "<br>" + "Super🔥You have drink the perfect amount of water in the " + tp + "(" + ta + "ml)";
+        }
